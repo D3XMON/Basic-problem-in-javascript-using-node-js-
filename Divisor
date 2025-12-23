@@ -1,0 +1,31 @@
+// Funcion Sumar que analiza si el numero puesto es divisible por 5, 2 y 4
+function sumar(n) {
+  if (n%5 === 0) {
+    console.log("Es divisible por 5");
+  }else{
+    console.log("No es divisible por 5")
+  }
+   if (n%2 === 0) {
+    console.log("Es divisible por 2");
+  }else{
+    console.log("No es divisible por 2")
+  }
+     if (n%4 === 0) {
+    console.log("Es divisible por 4");
+  }else{
+    console.log("No es divisible por 4")
+  }
+}
+//Variable readline propia de node.js para poder interactuar desde la terminal
+const readline = require('readline');
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+rl.question("Ingrese un número: ", (numero) => {
+  sumar(Number(numero));
+rl.close();
+});
+//Poner node en terminal seguido del nombre del script para que funcione.
