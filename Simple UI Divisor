@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divisora de dividendos</title>
+</head>
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #f2f2f2;
+        font-family: Arial, sans-serif;
+    }
+
+    .box {
+        background: white;
+        padding: 50px;
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .box h2 {
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .box input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        margin-left: -5px;
+        font-size: 16px;
+
+    }
+
+    .box button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<body>
+
+    <div class="box">
+        <h2>DIVISORA</h2>
+        <input type="number" id="numero" placeholder="Ingrese un número">
+        <button onclick="sumar()">Comprobar</button>
+        <p id="resultado"></p>
+    </div>
+    <script>
+        function sumar() {
+            //Variable numerica 
+            const n = Number(document.getElementById("numero").value);
+            //Caja de texto
+            const resultado = document.getElementById("resultado");
+            if (n === 0 || isNaN(n)) {
+                resultado.textContent = "Ingrese un número válido";
+                return;
+            }
+            let texto = "";
+//+= Acumula el resultado del texto ? : Es un if else reducido donde Aqui(if):Aca(else)
+            texto += (n % 5 === 0) ? "Divisible por 5\n" : "No divisible por 5\n";
+            texto += (n % 2 === 0) ? "Divisible por 2\n" : "No divisible por 2\n";
+            texto += (n % 4 === 0) ? "Divisible por 4\n" : "No divisible por 4\n";
+
+            resultado.textContent = texto;
+        }
+    </script>
+</body>
+
+</html>
